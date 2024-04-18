@@ -34,6 +34,16 @@ pipeline {
             }
         }
 
+stage("sonar code test")
+{
+steps{
+script{
+sh "mvn sonar:sonar"
+}
+}
+}
+
+
         stage("publish to nexus") {
             steps {
                 script {
